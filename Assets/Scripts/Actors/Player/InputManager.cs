@@ -57,11 +57,6 @@ namespace Player
         #endregion
 
         #region UPDATES
-        // FIXEDUPDATE FOR PHYSICS MOVEMENTS
-        private void FixedUpdate()
-        {
-            _movementController.Move(_onFootActions.Movement.ReadValue<Vector2>());
-        }
 
         // LATEUPDATE FOR CAMERA MOVEMENTS
         private void LateUpdate()
@@ -72,7 +67,7 @@ namespace Player
         //UPDATE FOR WEAPON/ACTIONS HANDLING
         private void Update()
         {
-
+            _movementController.Move(_onFootActions.Movement.ReadValue<Vector2>());
         }
         #endregion
 

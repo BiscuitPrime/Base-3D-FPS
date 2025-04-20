@@ -46,13 +46,13 @@ namespace Player
             direction.x = input.x;
             direction.z = input.y;
             
-            _charaController.Move(_curSpeed * Time.deltaTime * transform.TransformDirection(direction));
             _velocity.y += _gravity * Time.deltaTime;
             if (_isGrounded && _velocity.y < 0)
             {
                 _velocity.y = -2f;
             }
-            _charaController.Move(_velocity * Time.deltaTime);
+            direction.y = _velocity.y;
+            _charaController.Move(_curSpeed * Time.deltaTime * transform.TransformDirection(direction));
         }
 
         /// <summary>
